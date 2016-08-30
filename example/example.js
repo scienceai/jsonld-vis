@@ -1,6 +1,7 @@
 
 import d3 from 'd3';
-require('..');
+import jsonldVis from '..';
+jsonldVis(d3);
 
 d3.json('example.json', (err, data) => {
   if (err) return console.warn(err);
