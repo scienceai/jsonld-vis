@@ -6,7 +6,7 @@
   "scripts": {
     "prepublish": "npm run build && npm run build-example && npm run subtree-push",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_ENV=\"production\" babel src/ -d dist/",
+    "build": "npm run env NODE_ENV=\"production\" && babel src/ -d dist/",
     "build-example": "browserify example/example.js -v -o example/example.min.js",
     "watch-example": "watchify example/example.js -v -o example/example.min.js",
     "subtree-push": "git subtree push --prefix example origin gh-pages"
